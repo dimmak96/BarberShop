@@ -1,21 +1,31 @@
+
+
 <h2>Записаться</h2>
 
+<script type="text/javascript">
+  $(function(){
 
+    $.datetimepicker.setLocale('en');
+    $('#color').simplecolorpicker();
+    $('#datetimepicker').datetimepicker();
+
+  });
+</script>
 
 <form action="/visit" method="POST">
   <div class="form-group">
     <label>Ваше имя:</label>
-    <input name="username" type="text" class="form-control" id="exampleInputEmail1" placeholder="Ваше имя" value=<%= @name %>>
+    <input name="username" type="text" class="form-control"  placeholder="Ваше имя" value=<%= @name %>>
   </div>
 
   <div class="form-group">
     <label>Ваш телефон:</label>
-    <input name="phone" type="text" class="form-control" id="exampleInputEmail1" placeholder="Ваш телефон" value=<%= @phone %>>
+    <input name="phone" type="text" class="form-control"  placeholder="Ваш телефон" value=<%= @phone %>>
   </div>
 
   <div class="form-group">
     <label>Когда вас ждать?</label>
-    <input name="datetime" type="text" class="form-control" id="exampleInputEmail1" placeholder="Введите дату и время" value=<%= @datetime %>>
+    <input id="datetimepicker" name="datetime" type="text" class="form-control" placeholder="Введите дату и время" value=<%= @datetime %>>
   </div>
 
   <div class="form-group">
@@ -51,12 +61,6 @@
   <button type="submit" class="btn btn-primary">Записаться</button>
 </form>
 
-<script type="text/javascript">
-  $(function(){
 
-    $('#color').simplecolorpicker();
-
-  });
-</script>
 
 

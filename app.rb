@@ -96,9 +96,9 @@ post '/contacts' do
 
 
 
-	#f1=File.open './public/contacts.txt', 'a'
-	#f1.write "Email: #{@email}, Message: #{@message}\n"
-	#f1.close
+	f1=File.open './public/contacts.txt', 'a'
+	f1.write "Email: #{@email}, Message: #{@message}\n"
+	f1.close
 
 	erb :thanks
 end
