@@ -55,7 +55,9 @@ get '/about' do
 end
 
 get '/visit' do
-	erb :visit
+	db = get_db
+	@barbers = db.execute 'select name from Barbers'
+   	erb :visit
 end
 
 get '/contacts' do
@@ -63,6 +65,8 @@ get '/contacts' do
 end
 
 post '/visit' do
+	db = get_db
+	@barbers = db.execute 'select name from Barbers'
 	@name=params[:username]
 	@phone=params[:phone]
 	@datetime=params[:datetime]
